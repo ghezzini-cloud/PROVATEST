@@ -1,0 +1,31 @@
+name: Football Alert
+
+on:
+  schedule:
+    # ogni 5 minuti tra le 17:00 e le 21:59 UTC = 19:00-23:59 ora italiana (CEST)
+    - cron: '*/5 17-21 * * *'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install requests
+
+      - run: python football_alert_action.py
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: 'notified_matches.json'
+          message: 'aggiorna partite notificate'
+          default_author: github_actions
