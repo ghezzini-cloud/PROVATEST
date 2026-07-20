@@ -4,9 +4,9 @@ import json
 import requests
 from datetime import datetime
 
-API_FOOTBALL_KEY = os.environ["a49a6d89fdb5454c5a7dccc6d654e0f3"]
-TELEGRAM_BOT_TOKEN = os.environ["8112178814:AAGjg6VeG0deFRO5AMaOLToGTQcUl-bTeOA"]
-TELEGRAM_CHAT_ID = os.environ["150490925"]
+API_FOOTBALL_KEY = os.environ["API_FOOTBALL_KEY"]
+TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
+TELEGRAM_CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 
 # ============== FILTRI (modifica solo qui) ==============
 MINUTE_MIN = 0                   # minuto minimo da cui iniziare a controllare
