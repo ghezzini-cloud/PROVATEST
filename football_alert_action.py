@@ -22,7 +22,7 @@ TELEGRAM_CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 # ============== FILTRI (modifica solo qui) ==============
 # --- VALORI DI TEST: coprono qualsiasi minuto e qualsiasi tiro in porta ---
 MINUTE_MIN = 0                   # minuto minimo da cui iniziare a controllare
-MINUTE_MAX = 20                 # minuto massimo entro cui controllare (200 = nessun limite pratico)
+MINUTE_MAX = 30                 # minuto massimo entro cui controllare (200 = nessun limite pratico)
 SHOTS_ON_TARGET_THRESHOLD = 2    # tiri in porta totali (somma delle due squadre)
 POSSESSION_THRESHOLD = None      # es. 65 per avvisare se una squadra ha >=65% possesso, None per disattivare
 # Tutti i filtri attivi devono essere veri insieme (AND) perché scatti la notifica
