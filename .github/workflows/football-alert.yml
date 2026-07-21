@@ -1,9 +1,7 @@
 name: Football Alert
 
 on:
-  schedule:
-    # ogni 5 minuti tra le 17:00 e le 21:59 UTC = 19:00-23:59 ora italiana (CEST)
-    - cron: '*/5 17-21 * * *'
+  
   workflow_dispatch:
 
 jobs:
